@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:news/views/home_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -9,6 +10,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Material();
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: HomeView(),
+    );
   }
 }
