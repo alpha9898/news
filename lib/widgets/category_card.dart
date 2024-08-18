@@ -11,13 +11,15 @@ class CategoryCard extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
         image: const DecorationImage(
-            image: AssetImage('assets/technology.jpeg'), fit: BoxFit.fill),
+          image: AssetImage('assets/business.avif'),
+          fit: BoxFit.fill,
+        ),
       ),
       child: const Center(
         child: Text(
           'Bussiness',
           style: TextStyle(
-              color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
+              color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
         ),
       ),
     );

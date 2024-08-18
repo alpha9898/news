@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:news/widgets/category_card.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -12,7 +13,7 @@ class HomeView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'News ',
+              'News',
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
             Text(
@@ -23,6 +24,7 @@ class HomeView extends StatelessWidget {
           ],
         ),
       ),
+      body: CategoryCard(),
     );
   }
 }
