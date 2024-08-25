@@ -3,8 +3,11 @@ import 'package:news/views/home_view.dart';
 import 'package:dio/dio.dart';
 
 void main() {
+  // getGeneralNews();
   runApp(const MyApp());
 }
+
+final dio = Dio();
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
