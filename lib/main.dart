@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:news/services/news_services.dart';
 import 'package:news/views/home_view.dart';
 import 'package:dio/dio.dart';
 
 void main() {
+  NewsService(Dio()).getNews();
   runApp(const MyApp());
 }
 
@@ -19,6 +21,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-// TODO add api
-// TODO add endpoints 
