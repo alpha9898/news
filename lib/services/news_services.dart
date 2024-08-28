@@ -1,13 +1,19 @@
 import 'package:dio/dio.dart';
 
-class NewsServices {
+class NewsService {
   final Dio dio;
 
-  NewsServices(this.dio);
+  NewsService(this.dio);
 
-  void getNews() async {
-    Response response = await dio.get(
-        'https://newsapi.org/v2/top-headlines?country=eg&apiKey=4b931ad00fa345d589f1cd7e48268823&category=general');
-    print(response);
+  getNews() async {
+    var response = await dio.get(
+        'https://newsapi.org/v2/top-headlines?apiKey=3c88955c487e4d9db668f011dd85e737&country=eg&category=general');
+
+    Map<String, dynamic> jsonData = response.data;
+
+    List<dynamic> articles = jsonData['articles'];
+    for (var article in articles) {
+      print(article['author']);
+    }
   }
 }
