@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:news/models/article_model.dart';
 
 class NewsService {
   final Dio dio;
@@ -12,6 +13,7 @@ class NewsService {
     Map<String, dynamic> jsonData = response.data;
 
     List<dynamic> articles = jsonData['articles'];
+    List<ArticleModel>;
     for (var article in articles) {
       print(article['author']);
     }
