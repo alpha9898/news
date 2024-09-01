@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:news/models/article_model.dart';
 
 class NewsTile extends StatelessWidget {
-  const NewsTile({super.key});
+  const NewsTile({super.key, required ArticleModel articleModel});
 
   @override
   Widget build(BuildContext context) {
