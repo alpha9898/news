@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news/models/category_model.dart';
+import 'package:news/views/category_view.dart';
 
 class CategoryCard extends StatelessWidget {
   const CategoryCard({super.key, required this.category});
@@ -7,23 +8,34 @@ class CategoryCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(right: 12),
-      child: Container(
-        height: 85,
-        width: 160,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(12),
-          image: DecorationImage(
-            image: AssetImage(category.image),
-            fit: BoxFit.fill,
+    return GestureDetector(
+      onTap: () {
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) {
+              return const CategoryView();
+            },
           ),
-        ),
-        child: Center(
-          child: Text(
-            category.categoryName,
-            style: const TextStyle(
-                color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
+        );
+      },
+      child: Padding(
+        padding: const EdgeInsets.only(right: 16),
+        child: Container(
+          height: 85,
+          width: 160,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(12),
+            image: DecorationImage(
+                image: AssetImage(category.image), fit: BoxFit.fill),
+          ),
+          child: Center(
+            child: Text(
+              category.categoryName,
+              style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold),
+            ),
           ),
         ),
       ),
